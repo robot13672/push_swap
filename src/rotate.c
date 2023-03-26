@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/26 18:06:40 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 22:46:41 by ikhristi         ###   ########.fr       */
+/*   Created: 2023/03/26 20:31:53 by ikhristi          #+#    #+#             */
+/*   Updated: 2023/03/26 21:10:23 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/push_swap.h"
 
-int	main(int argc, char **argv)
+static void	rotate(t_stack **stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_list	*tmp;
+	t_list	*last;
 
-	b = NULL;
-	if (argv < 2 || (argc == 2 && argv[1][0] == '\0'))
-		throw_error("Error");
-	if (argc == 2 && !arg_is_number(argv[1]))
-		a = parse_str(argv[1]);
-	else
-		a = parse_arr(argc, argv);
-	
+	tmp = *stack;
+	*stack = (*stack)->next;
+	last = ft_stack_last(*stack);
+	tmp->next = NULL;
+	last->next = tmp;
+}
+
+void	rotate_ra(t_stack **stack)
+{
+	rotate(stack);
+	ft_putendl_fd("ra", 1);
+}
+
+void	rotate_rb(t_stack **stack)
+{
+	rotate(stack);
+	ft_putendl_fd("rb", 1);
+}
+
+void	rotate_rr(t_stack **a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+	ft_putendl_fd("rr", 1);
 }

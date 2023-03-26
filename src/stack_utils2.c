@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 23:17:33 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/21 18:11:16 by ikhristi         ###   ########.fr       */
+/*   Created: 2023/03/26 20:58:19 by ikhristi          #+#    #+#             */
+/*   Updated: 2023/03/26 21:34:57 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,6 @@ int	*ft_stack_to_arr(t_stack *stack)
 		i++;
 	}
 	return (arr);
-}
-
-void	ft_clear_stack(t_stack **stack)
-{
-	t_stack	*next;
-	t_stack	*current;
-
-	current = stack;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*stack = NULL;
 }
 
 int	ft_is_sorted_stack(t_stack *stack)
