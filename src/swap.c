@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:30:59 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 21:20:48 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:20:11 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,24 @@ static void	swap(t_stack *stack)
 	}
 }
 
-void	swap_sa(t_stack **stack)
+void	swap_sa(t_stack **stack, int output)
 {
 	swap(*stack);
-	ft_putendl_fd("sa", 1);
+	if (output)
+		ft_putendl_fd("sa", 1);
 }
 
-void	swap_sb(t_stack **stack)
+void	swap_sb(t_stack **stack, int output)
 {
 	swap(*stack);
-	ft_putendl_fd("sb", 1);
+	if (output)
+		ft_putendl_fd("sb", 1);
 }
 
-void	swap_ss(t_stack **a, t_stack **b)
+void	swap_ss(t_stack **a, t_stack **b, int output)
 {
 	swab(*a);
 	swap(*b);
-	ft_putendl_fd("ss", 1);
+	if (output)
+		ft_putendl_fd("ss", 1);
 }
