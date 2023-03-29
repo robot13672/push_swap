@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:06:40 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 22:46:41 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:10:23 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	main(int argc, char **argv)
 		a = parse_str(argv[1]);
 	else
 		a = parse_arr(argc, argv);
+	push_swap_check(&a, &b);
 	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:58:19 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 21:34:57 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/28 18:03:02 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,29 @@ int	ft_stack_lowest_value(t_stack *stack)
 	if (!stack)
 		return (0);
 	min = stack->value;
-	while (stack)
+	while (stack != NULL)
 	{
 		if (stack->value < min)
-			min = stack->next;
+			min = stack->value;
 		stack = stack->next;
 	}
 	return (min);
+}
+
+int ft_stack_highest_value(t_stack *stack)
+{
+	int	max;
+
+	if (!stack)
+		return (0);
+	max = stack->value;
+	while (stack != NULL)
+	{
+		if (stack->value > max)
+			max = stack->value;
+		stack = stack->next;
+	}
+	return (max);
 }
 
 void	ft_print_stack(t_stack *stack)

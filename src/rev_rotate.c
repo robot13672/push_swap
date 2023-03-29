@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:13:29 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/27 20:21:31 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:31:33 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	rev_rotete_rb(t_stack **stack, int output)
 {
 	rev_rotete(stack);
 	if (output)
-		ft_putendl_fd("rrb", 1, int output);
+		ft_putendl_fd("rrb", 1);
 }
 
-void	rev_rotete_rr(t_stack **a, t_stack **b)
+void	rev_rotete_rr(t_stack **a, t_stack **b, int output)
 {
 	rev_rotete(a);
 	rev_rotete(b);

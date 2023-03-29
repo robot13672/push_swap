@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 22:47:40 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:10:03 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 //push
-void		push_pa(t_stack **a, t_stack **b);
-void		push_pb(t_stack **a, t_stack **b);
+void		push_pa(t_stack **a, t_stack **b, int output);
+void		push_pb(t_stack **a, t_stack **b, int output);
 //stack_utils
 void		ft_stack_add(t_stack **stack, t_stack *new);
 t_stack		*ft_newstack(int value);
@@ -33,21 +33,22 @@ t_stack		*ft_stack_last(t_stack *stack);
 t_stack		*ft_stack_penultimate(t_stack *stack);
 //stack_utils_2
 int			ft_stack_lowest_value(t_stack *stack);
-void		ft_print_stack(t_stack *stack);
+int			ft_stack_highest_value(t_stack *stack)
+void		ft_print_stack(t_stack *stack)
 int			*ft_stack_to_arr(t_stack *stack);
 int			ft_is_sorted_stack(t_stack *stack);
 //swap
-void		swap_sa(t_stack **stack);
-void		swap_sb(t_stack **stack);
-void		swap_ss(t_stack **a, t_stack **b);
+void		swap_sa(t_stack **stack, int output);
+void		swap_sb(t_stack **stack, int output);
+void		swap_ss(t_stack **a, t_stack **b, int output);
 //rotate
-void		rotate_ra(t_stack **stack);
-void		rotate_rb(t_stack **stack);
-void		rotate_rr(t_stack **a, t_stack *b);
+void		rotate_ra(t_stack **stack, int output);
+void		rotate_rb(t_stack **stack, int output);
+void		rotate_rr(t_stack **a, t_stack *b, int output);
 //rev_rotate
-void		rev_rotate_ra(t_stack **stack);
-void		rev_rotete_rb(t_stack **stack);
-void		rev_rotete_rr(t_stack **a, t_stack **b);
+void		rev_rotate_ra(t_stack **stack, int output);
+void		rev_rotete_rb(t_stack **stack, int output);
+void		rev_rotete_rr(t_stack **a, t_stack **b, int output);
 //errors_utils
 void		throw_error(char *str);
 void		list_clear(t_stack **stack);
@@ -60,5 +61,9 @@ int			ft_input_check(char **arr);
 t_stack		*parse_str(char *str);
 t_stack		*parse_arr(int argc, char **argv);
 long int	long_atoi(char *str);
-
+//small_sort
+void 		little_sort(t_stack **a, t_stack **b);
+void		small_sort(t_stack **s);
+//push_swap
+void		push_swap_check(t_stack **a, t_stack **b);
 #endif
