@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/30 17:03:49 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:18:05 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ t_stack		*parse_str(char *str);
 t_stack		*parse_arr(int argc, char **argv);
 long int	long_atoi(char *str);
 //small_sort
-void 		little_sort(t_stack **a, t_stack **b);
+void		little_sort(t_stack **a, t_stack **b);
 void		small_sort(t_stack **s);
 //push_swap
 void		push_swap_check(t_stack **a, t_stack **b);
+//calc_cost_utils
+int			ft_find_place(t_stack *a, int value);
+int			ft_check_lowest_rotations(t_stack *a, int value);
 #endif

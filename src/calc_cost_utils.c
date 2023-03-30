@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:59:59 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/30 18:05:34 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:03:16 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,19 @@
 
 int	ft_check_lowest_rotations(t_stack *a, int value)
 {
+	t_stack	*cur;
+	size_t	i;
 
+	cur = a;
+	i = 0;
+	while (cur && cur->value != value)
+	{
+		cur = cur->next;
+		i++;
+	}
+	if (ft_stack_size(&a) - i < i)
+		return (i - ft_stack_size(&a));
+	return (i);
 }
 
 int	ft_find_place(t_stack *a, int value)
@@ -25,9 +37,17 @@ int	ft_find_place(t_stack *a, int value)
 
 	is_max = 1;
 	cur = a;
-	low = INT16_MAX;
+	low = INT_MAX;
 	while (cur)
 	{
-		if (cur->value > value)//Should end this
+		if (cur->value > value && cur->value <= low)
+		{
+			is_max = 0;
+			low = cur->value;
+		}
+		cur = cur->next;
 	}
+	if (is_max)
+		low = ft_stack_lowest_value(&a);
+	return (ft_check_lowest_rotations(a, low));
 }

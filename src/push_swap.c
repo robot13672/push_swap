@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:15:09 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/30 17:06:26 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:02:18 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	push_swap(t_stack **a, t_stack **b)
 	push_to_b(a, b);
 	if (!ft_is_sorted_stack(a))
 		small_sort(a);
-	push_back_s
+	push_back_sorted(a, b);
 }
 
 void	push_swap_check(t_stack **a, t_stack **b)
