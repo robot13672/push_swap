@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/29 13:10:03 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:03:49 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_transf_price
+{
+	int	moves[2];
+	int	value;
+}				t_transf_price;
+
 //push
 void		push_pa(t_stack **a, t_stack **b, int output);
 void		push_pb(t_stack **a, t_stack **b, int output);
@@ -33,8 +40,8 @@ t_stack		*ft_stack_last(t_stack *stack);
 t_stack		*ft_stack_penultimate(t_stack *stack);
 //stack_utils_2
 int			ft_stack_lowest_value(t_stack *stack);
-int			ft_stack_highest_value(t_stack *stack)
-void		ft_print_stack(t_stack *stack)
+int			ft_stack_highest_value(t_stack *stack);
+void		ft_print_stack(t_stack *stack);
 int			*ft_stack_to_arr(t_stack *stack);
 int			ft_is_sorted_stack(t_stack *stack);
 //swap
