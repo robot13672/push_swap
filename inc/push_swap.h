@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/30 21:18:05 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:03:12 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,10 @@ void		push_swap_check(t_stack **a, t_stack **b);
 //calc_cost_utils
 int			ft_find_place(t_stack *a, int value);
 int			ft_check_lowest_rotations(t_stack *a, int value);
+//calc_cost
+static int	ft_abs(int n);
+static int	calculate_value(int a, int b);
+int			check_rotate_values(t_transf_price *prices, t_stack *a, t_stack *b);
+void		single_rot(t_transf_price *p, int i, t_stack **a, t_stack **b);
+
 #endif

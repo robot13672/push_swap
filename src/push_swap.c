@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:15:09 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/30 21:02:18 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:08:48 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,12 @@ void	push_back_sorted(t_stack **a, t_stack **b)
 	prices = (t_transf_price *)malloc(sizeof(t_transf_price) * size);
 	while ((*b) != 0)
 	{
-		low = 
+		low = check_rotate_values(prices, a, b);
+		double_rot(prices, low, a, b);
+		single_rot(prices, low, a, b);
+		push_pa(a, b, 1);
 	}
+	free(prices);
 }
 
 void	push_swap(t_stack **a, t_stack **b)
@@ -62,6 +66,20 @@ void	push_swap(t_stack **a, t_stack **b)
 	if (!ft_is_sorted_stack(a))
 		small_sort(a);
 	push_back_sorted(a, b);
+	rotates = ft_check_lowest_rotations(*a, ft_stack_lowest_value(a));
+	while (rotates != 0)
+	{
+		if (rotates > 0)
+		{
+			rotate_ra(a, 1);
+			rotates--;
+		}
+		else
+		{
+			rev_rotate_ra(a, 1);
+			rotates++;
+		}
+	}
 }
 
 void	push_swap_check(t_stack **a, t_stack **b)
@@ -78,5 +96,5 @@ void	push_swap_check(t_stack **a, t_stack **b)
 	else if (stack_size <= 5 && !ft_is_sorted_stack(a))
 		little_sort(a, b);
 	else if (stack_size > 5 && !ft_is_sorted_stack(a))
-
+		push_swap(a, b);
 }
