@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/06 19:03:12 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:24:09 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 # include <limits.h>
 
 typedef struct s_stack

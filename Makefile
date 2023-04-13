@@ -6,7 +6,7 @@
 #    By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 19:13:37 by ikhristi          #+#    #+#              #
-#    Updated: 2023/04/07 19:20:29 by ikhristi         ###   ########.fr        #
+#    Updated: 2023/04/07 19:32:24 by ikhristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,4 +20,6 @@ SRC_MAIN = main.c
 NAME = push_swap
 
 LIBFT = inc/libft
-PRINTF = int/
+PRINTF = int/printf
+
+OBJS_DIR = objs
