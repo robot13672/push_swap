@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ikhristi <ikhristi@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:58:19 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/28 18:03:02 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:42:28 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 int	ft_stack_lowest_value(t_stack *stack)
 {
@@ -42,16 +42,6 @@ int ft_stack_highest_value(t_stack *stack)
 		stack = stack->next;
 	}
 	return (max);
-}
-
-void	ft_print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		ft_printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("\n");
 }
 
 int	*ft_stack_to_arr(t_stack *stack)

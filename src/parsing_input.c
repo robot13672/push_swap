@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:45:39 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 22:35:25 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:21:42 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 int	arg_is_number(char *arg)
 {
@@ -50,6 +50,7 @@ int	ft_input_check(char **arr)
 {
 	int	i;
 
+	i = 0;
 	while (arr[i])
 	{
 		if (!arg_is_number(arr[i]))

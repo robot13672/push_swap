@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/13 20:24:09 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:42:42 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "printf/ft_printf.h"
-# include "get_next_line/get_next_line.h"
 # include <limits.h>
 
 typedef struct s_stack
@@ -42,7 +40,6 @@ t_stack		*ft_stack_penultimate(t_stack *stack);
 //stack_utils_2
 int			ft_stack_lowest_value(t_stack *stack);
 int			ft_stack_highest_value(t_stack *stack);
-void		ft_print_stack(t_stack *stack);
 int			*ft_stack_to_arr(t_stack *stack);
 int			ft_is_sorted_stack(t_stack *stack);
 //swap
@@ -52,11 +49,11 @@ void		swap_ss(t_stack **a, t_stack **b, int output);
 //rotate
 void		rotate_ra(t_stack **stack, int output);
 void		rotate_rb(t_stack **stack, int output);
-void		rotate_rr(t_stack **a, t_stack *b, int output);
+void		rotate_rr(t_stack **a, t_stack **b, int output);
 //rev_rotate
 void		rev_rotate_ra(t_stack **stack, int output);
-void		rev_rotete_rb(t_stack **stack, int output);
-void		rev_rotete_rr(t_stack **a, t_stack **b, int output);
+void		rev_rotate_rb(t_stack **stack, int output);
+void		rev_rotate_rr(t_stack **a, t_stack **b, int output);
 //errors_utils
 void		throw_error(char *str);
 void		list_clear(t_stack **stack);
@@ -78,9 +75,8 @@ void		push_swap_check(t_stack **a, t_stack **b);
 int			ft_find_place(t_stack *a, int value);
 int			ft_check_lowest_rotations(t_stack *a, int value);
 //calc_cost
-static int	ft_abs(int n);
-static int	calculate_value(int a, int b);
 int			check_rotate_values(t_transf_price *prices, t_stack *a, t_stack *b);
 void		single_rot(t_transf_price *p, int i, t_stack **a, t_stack **b);
+void		double_rot(t_transf_price *p, int i, t_stack **a, t_stack **b);
 
 #endif

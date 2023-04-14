@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:07:52 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/06 19:02:30 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:07:19 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 static int	ft_abs(int n)
 {
@@ -64,7 +64,7 @@ void	double_rot(t_transf_price *p, int i, t_stack **a, t_stack **b)
 	{
 		p[i].moves[0] += 1;
 		p[i].moves[1] += 1;
-		rev_rotete_rr(a, b, 1);
+		rev_rotate_rr(a, b, 1);
 	}
 }
 
@@ -83,11 +83,11 @@ void	single_rot(t_transf_price *p, int i, t_stack **a, t_stack **b)
 	while (p[i].moves[0] < 0)
 	{
 		p[i].moves[0] += 1;
-		revrotate_ra(a, 1);
+		rev_rotate_ra(a, 1);
 	}
 	while (p[i].moves[1] < 0)
 	{
 		p[i].moves[1] += 1;
-		revrotate_rb(b, 1);
+		rev_rotate_rb(b, 1);
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:55:22 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/13 20:40:13 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:06:21 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	read_operations(t_stack **a, t_stack **b, char *op)
 {
@@ -31,11 +31,11 @@ int	read_operations(t_stack **a, t_stack **b, char *op)
 	else if (!ft_strncmp(op, "rr\n", 4))
 		rotate_rr(a, b, 0);
 	else if (!ft_strncmp(op, "rra\n", 5))
-		revrotate_ra(a, 0);
+		rev_rotate_ra(a, 0);
 	else if (!ft_strncmp(op, "rrb\n", 5))
-		revrotate_rb(b, 0);
+		rev_rotate_rb(b, 0);
 	else if (!ft_strncmp(op, "rrr\n", 5))
-		revrotate_rr(a, b, 0);
+		rev_rotate_rr(a, b, 0);
 	else
 		return (0);
 	return (1);
@@ -43,7 +43,7 @@ int	read_operations(t_stack **a, t_stack **b, char *op)
 
 void	print_result(t_stack *a, t_stack *b)
 {
-	if (ft_is_sorted_stack(&a) && !b)
+	if (ft_is_sorted_stack(a) && !b)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);

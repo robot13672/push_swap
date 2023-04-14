@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_input_utils.c                              :+:      :+:    :+:   */
+/*   ft_strjoin_check.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/26 21:47:08 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:08:15 by ikhristi         ###   ########.fr       */
+/*   Created: 2023/04/14 15:24:07 by ikhristi          #+#    #+#             */
+/*   Updated: 2023/04/14 15:24:20 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "libft.h"
 
-int	is_sign(char ch)
+char	*ft_strjoin_check(char *s1, char *s2)
 {
-	return (ch == '+' || ch == '-');
+	char	*res;
+
+	if (!s1)
+		res = ft_strjoin("", s2);
+	else
+	{
+		res = ft_strjoin(s1, s2);
+		free(s1);
+	}
+	return (res);
 }

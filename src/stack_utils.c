@@ -6,16 +6,27 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:56:58 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 20:57:29 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:55:21 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ft_stack_add(t_stack **stack, t_stack *new)
 {
-	new->next = *stack;
-	*stack = new;
+	t_stack	*tmp;
+
+	tmp = *stack;
+	if (*stack == NULL)
+	{
+		*stack = new;
+		return ;
+	}
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = new;
 }
 
 t_stack	*ft_newstack(int value)

@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:56:17 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/26 22:46:57 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:27:40 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 t_stack	*parse_arr(int argc, char **argv)
 {
@@ -25,7 +25,7 @@ t_stack	*parse_arr(int argc, char **argv)
 	{
 		nb = long_atoi(argv[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			msg_err("Error");
+			throw_error("Error");
 		else if (i == 1)
 			new = ft_newstack((int)nb);
 		else
@@ -33,6 +33,19 @@ t_stack	*parse_arr(int argc, char **argv)
 		i++;
 	}
 	return (new);
+}
+
+static void	free_split(char **numbers)
+{
+	int	i;
+
+	i = 0;
+	while (numbers[i])
+	{
+		free(numbers[i]);
+		i++;
+	}
+	free(numbers);
 }
 
 t_stack	*parse_str(char *str)
@@ -82,16 +95,4 @@ long int	long_atoi(char *str)
 		i++;
 	}
 	return (nb * sign);
-}
-
-static void	free_split(char **numbers)
-{
-	int	i;
-
-	i = 0;
-	while (numbers[i])
-	{
-		free(numbers[i]);
-		i++;
-	}
 }

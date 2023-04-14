@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:08:50 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/03/27 20:22:38 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:08:27 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 static void	push(t_stack **stack_a, t_stack **stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:15:09 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/06 19:08:48 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:31:08 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 void	push_to_b(t_stack **a, t_stack **b)
 {
@@ -25,8 +25,8 @@ void	push_to_b(t_stack **a, t_stack **b)
 		f += ((double)buf->value / 1000);
 		buf = buf->next;
 	}
-	i = (f * 1000) / ft_stack_size(a);
-	while (ft_stack_size(a) > 3)
+	i = (f * 1000) / ft_stack_size(*a);
+	while (ft_stack_size(*a) > 3)
 	{
 		if ((*a)->value <= i)
 		{
@@ -44,11 +44,11 @@ void	push_back_sorted(t_stack **a, t_stack **b)
 	int				low;
 	size_t			size;
 
-	size = ft_stack_size(b);
+	size = ft_stack_size(*b);
 	prices = (t_transf_price *)malloc(sizeof(t_transf_price) * size);
 	while ((*b) != 0)
 	{
-		low = check_rotate_values(prices, a, b);
+		low = check_rotate_values(prices, *a, *b);
 		double_rot(prices, low, a, b);
 		single_rot(prices, low, a, b);
 		push_pa(a, b, 1);
@@ -63,10 +63,10 @@ void	push_swap(t_stack **a, t_stack **b)
 	push_pb(a, b, 1);
 	push_pb(a, b, 1);
 	push_to_b(a, b);
-	if (!ft_is_sorted_stack(a))
+	if (!ft_is_sorted_stack(*a))
 		small_sort(a);
 	push_back_sorted(a, b);
-	rotates = ft_check_lowest_rotations(*a, ft_stack_lowest_value(a));
+	rotates = ft_check_lowest_rotations(*a, ft_stack_lowest_value(*a));
 	while (rotates != 0)
 	{
 		if (rotates > 0)
@@ -86,15 +86,15 @@ void	push_swap_check(t_stack **a, t_stack **b)
 {
 	int	stack_size;
 
-	stack_size = ft_stack_size(a);
+	stack_size = ft_stack_size(*a);
 	if (stack_size == 1)
 		return ;
-	else if (stack_size == 2 && !ft_is_sorted_stack(a))
+	else if (stack_size == 2 && !ft_is_sorted_stack(*a))
 		swap_sa(a, 1);
-	else if (stack_size == 3 && !ft_is_sorted_stack(a))
+	else if (stack_size == 3 && !ft_is_sorted_stack(*a))
 		small_sort(a);
-	else if (stack_size <= 5 && !ft_is_sorted_stack(a))
+	else if (stack_size <= 5 && !ft_is_sorted_stack(*a))
 		little_sort(a, b);
-	else if (stack_size > 5 && !ft_is_sorted_stack(a))
+	else if (stack_size > 5 && !ft_is_sorted_stack(*a))
 		push_swap(a, b);
 }

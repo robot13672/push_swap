@@ -6,11 +6,11 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:26:15 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/06 19:09:53 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:08:09 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 void	throw_error(char *str)
 {
