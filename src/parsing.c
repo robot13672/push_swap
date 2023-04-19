@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:56:17 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:27:40 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:51:01 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ t_stack	*parse_str(char *str)
 	while (numbers[i])
 	{
 		nb = long_atoi(numbers[i]);
-		if (nb > INT_MAX && nb < INT_MIN)
+		if (nb > INT_MAX || nb < INT_MIN)
 			throw_error("Error");
 		if (i == 0)
-			ft_newstack((int)nb);
+			new = ft_newstack((int)nb);
 		else
 			ft_stack_add(&new, ft_newstack((int)nb));
 		i++;

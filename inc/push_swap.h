@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:29:43 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:42:42 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:28:36 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,9 @@ void		rev_rotate_rr(t_stack **a, t_stack **b, int output);
 //errors_utils
 void		throw_error(char *str);
 void		list_clear(t_stack **stack);
-//parsing_input_utils
-int			is_sign(char ch);
 //parsing_input
 int			arg_is_number(char *arg);
+int			is_sign(char ch);
 int			ft_input_check(char **arr);
 //parsing
 t_stack		*parse_str(char *str);

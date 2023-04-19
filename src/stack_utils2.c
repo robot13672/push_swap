@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:58:19 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:42:28 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:29:54 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_stack_lowest_value(t_stack *stack)
 	return (min);
 }
 
-int ft_stack_highest_value(t_stack *stack)
+int	ft_stack_highest_value(t_stack *stack)
 {
 	int	max;
 

@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:45:39 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:21:42 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:28:47 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,9 @@ int	ft_input_check(char **arr)
 	if (have_duplicates(arr))
 		return (0);
 	return (1);
+}
+
+int	is_sign(char ch)
+{
+	return (ch == '+' || ch == '-');
 }

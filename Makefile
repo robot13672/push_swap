@@ -6,7 +6,7 @@
 #    By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 19:13:37 by ikhristi          #+#    #+#              #
-#    Updated: 2023/04/14 18:43:20 by ikhristi         ###   ########.fr        #
+#    Updated: 2023/04/17 19:00:29 by ikhristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 DEBUG = -fsanitize=address
 LEAKS = leaks -atExit -- ./push-swap
 
-BONUS = checker
+BONUS = bonus
 BONUS_MAIN = src/checker/checker.c
 
 MAIN = src/main.c
@@ -32,7 +32,6 @@ LIBFTPRINTF = inc/libft/
 SRCS =  src/calc_cost.c \
 		src/calc_cost_utils.c \
 		src/errors_utils.c \
-		src/parsing_input_utils.c \
 		src/parsing_input.c \
 		src/parsing.c \
 		src/push_swap.c \

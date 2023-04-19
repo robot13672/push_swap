@@ -6,13 +6,14 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:59:59 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:17:51 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:29:04 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_lowest_rotations(t_stack *a, int value)//find best rotation
+//find best rotation
+int	ft_check_lowest_rotations(t_stack *a, int value)
 {
 	t_stack	*cur;
 	size_t	i;
@@ -29,7 +30,8 @@ int	ft_check_lowest_rotations(t_stack *a, int value)//find best rotation
 	return (i);
 }
 
-int	ft_find_place(t_stack *a, int value)//Looks for the smallest element that is greater than the given one.
+//Looks for the smallest element that is greater than the given one.
+int	ft_find_place(t_stack *a, int value)
 {
 	t_stack	*cur;
 	int		low;

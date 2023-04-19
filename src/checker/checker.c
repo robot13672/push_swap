@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 13:55:22 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 19:06:21 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 19:08:17 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 int	read_operations(t_stack **a, t_stack **b, char *op)
 {
-	if (!ft_strncmp(op, "sa\n", 4))
+	if (!ft_strncmp(op, "sa\n", 3))
 		swap_sa(a, 0);
-	else if (!ft_strncmp(op, "sb\n", 4))
+	else if (!ft_strncmp(op, "sb\n", 3))
 		swap_sb(b, 0);
-	else if (!ft_strncmp(op, "ss\n", 4))
+	else if (!ft_strncmp(op, "ss\n", 3))
 		swap_ss(a, b, 0);
-	else if (!ft_strncmp(op, "pa\n", 4))
+	else if (!ft_strncmp(op, "pa\n", 3))
 		push_pa(a, b, 0);
-	else if (!ft_strncmp(op, "pb\n", 4))
+	else if (!ft_strncmp(op, "pb\n", 3))
 		push_pb(a, b, 0);
-	else if (!ft_strncmp(op, "ra\n", 4))
+	else if (!ft_strncmp(op, "ra\n", 3))
 		rotate_ra(a, 0);
-	else if (!ft_strncmp(op, "rb\n", 4))
+	else if (!ft_strncmp(op, "rb\n", 3))
 		rotate_rb(b, 0);
-	else if (!ft_strncmp(op, "rr\n", 4))
+	else if (!ft_strncmp(op, "rr\n", 3))
 		rotate_rr(a, b, 0);
-	else if (!ft_strncmp(op, "rra\n", 5))
+	else if (!ft_strncmp(op, "rra\n", 4))
 		rev_rotate_ra(a, 0);
-	else if (!ft_strncmp(op, "rrb\n", 5))
+	else if (!ft_strncmp(op, "rrb\n", 4))
 		rev_rotate_rb(b, 0);
-	else if (!ft_strncmp(op, "rrr\n", 5))
+	else if (!ft_strncmp(op, "rrr\n", 4))
 		rev_rotate_rr(a, b, 0);
 	else
 		return (0);

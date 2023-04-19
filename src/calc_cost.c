@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:07:52 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:07:19 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:29:17 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ static int	calculate_value(int a, int b)
 		return (ft_abs(b));
 }
 
-int	check_rotate_values(t_transf_price *prices, t_stack *a, t_stack *b)//Find the best rotation with the less operations
+//Find the best rotation with the less operations
+int	check_rotate_values(t_transf_price *prices, t_stack *a, t_stack *b)
 {
 	int		i;
 	int		low;
