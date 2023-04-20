@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 11:53:14 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/17 18:31:49 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/20 19:40:57 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strjoin_check(char *s1, char *s2);
 
 //bonus
 t_list	*ft_lstnew(void *content);
@@ -87,9 +86,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 //get_next_line
-char	*ft_save(char *save);
-char	*ft_get_line(char *save);
-char	*read_line(int fd, char *save);
 char	*get_next_line(int fd);
 
 #endif

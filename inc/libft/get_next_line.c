@@ -10,118 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-char	*ft_strjoin_check(char *s1, char *s2)
+char	*ft_free(char *str)
 {
-	char	*res;
-
-	if (!s1)
-		res = ft_strjoin("", s2);
-	else
-	{
-		res = ft_strjoin(s1, s2);
-		free(s1);
-	}
-	return (res);
+	free(str);
+	return (NULL);
 }
 
-char	*ft_save(char *save)
+char	*ft_readrest(int fd, char *rest)
 {
-	char	*new_save;
-	int		i;
-	int		j;
-
-	i = 0;
-	while (save[i] && save[i] != '\n')
-		i++;
-	if (save[i] == '\0')
-	{
-		free(save);
-		return (NULL);
-	}
-	new_save = (char *)malloc(sizeof(char) * (ft_strlen(save) - i));
-	if (!new_save)
-		return (NULL);
-	i++;
-	j = 0;
-	while (save[i])
-		new_save[j++] = save[i++];
-	new_save[j] = '\0';
-	free(save);
-	return (new_save);
-}
-
-char	*ft_get_line(char *save)
-{
-	char	*line;
+	char	*buf;
 	int		i;
 
-	i = 0;
-	if (!save[i])
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (buf == NULL)
 		return (NULL);
-	while (save[i] && save[i] != '\n')
-		i++;
-	if (save[i] == '\n')
-		line = (char *)malloc(sizeof(char) * (i + 2));
-	else
-		line = (char *)malloc(sizeof(char) * (i + 1));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (save[i] && save[i] != '\n')
+	i = 1;
+	while (!ft_strchr_gnl(rest, '\n') && i != 0)
 	{
-		line[i] = save[i];
-		i++;
-	}
-	if (save[i] == '\n')
-		line[i++] = '\n';
-	line[i] = '\0';
-	return (line);
-}
-
-char	*read_line(int fd, char *save)
-{
-	int		read_bytes;
-	char	*buffer;
-
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	read_bytes = 1;
-	while (!ft_strchr(save, '\n') && read_bytes != 0)
-	{
-		read_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (read_bytes == -1)
+		i = read(fd, buf, BUFFER_SIZE);
+		if (i == -1)
 		{
-			free(buffer);
+			free(rest);
+			free(buf);
 			return (NULL);
 		}
-		buffer[read_bytes] = '\0';
-		save = ft_strjoin_check(save, buffer);
+		buf[i] = '\0';
+		rest = ft_strjoin_gnl(rest, buf);
 	}
-	free(buffer);
-	return (save);
+	free(buf);
+	return (rest);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*save;
-	char		*line;
+	char		*ret;
+	static char	*rest;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	rest = ft_readrest(fd, rest);
+	if (rest == NULL)
 		return (NULL);
-	if (read(fd, 0, 0) < 0)
-	{
-		if (save)
-			free(save);
-		save = NULL;
-		return (NULL);
-	}
-	save = read_line(fd, save);
-	if (!save)
-		return (NULL);
-	line = ft_get_line(save);
-	save = ft_save(save);
-	return (line);
+	ret = ft_line(rest);
+	rest = ft_rest(rest);
+	return (ret);
 }
