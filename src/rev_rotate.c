@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:13:29 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:36:20 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:35:55 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rev_rotete(t_stack **stack)
 
 	if (*stack && (*stack)->next)
 	{
-		last = ft_stack_penultimate(*stack);
+		last = ft_stack_last(*stack);
 		penultimate = ft_stack_penultimate(*stack);
 		last->next = (*stack);
 		(*stack) = last;

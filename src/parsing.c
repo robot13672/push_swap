@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 21:56:17 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/17 18:51:01 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:04:59 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,14 @@ t_stack	*parse_str(char *str)
 
 long int	long_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int		i;
+	int		sign;
+	long	nb;
 
 	nb = 0;
 	sign = 1;
 	i = 0;
-	if (str[i] == '+' && str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign = -1;

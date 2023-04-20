@@ -6,7 +6,7 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 20:27:01 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/17 18:43:31 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/20 16:01:37 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,25 @@
 void	small_sort(t_stack **s)
 {
 	if ((*s)->value < (*s)->next->value && \
-	(*s)->value > (*s)->next->next->value)
+		(*s)->value > (*s)->next->next->value)
 		rev_rotate_ra(s, 1);
 	else if ((*s)->value < (*s)->next->value && \
-	(*s)->value < (*s)->next->next->value)
+		(*s)->value < (*s)->next->next->value)
 	{
 		rev_rotate_ra(s, 1);
 		swap_sa(s, 1);
 	}
 	else if ((*s)->value > (*s)->next->value && \
-	(*s)->next->value > (*s)->next->next->value)
-		rev_rotate_ra(s, 1);
-	else if ((*s)->value > (*s)->next->value && \
-	(*s)->value < (*s)->next->next->value)
+		(*s)->value < (*s)->next->next->value)
 		swap_sa(s, 1);
 	else if ((*s)->value > (*s)->next->value && \
-	(*s)->value > (*s)->next->next->value)
+		(*s)->next->value > (*s)->next->next->value)
+	{
+		rotate_ra(s, 1);
+		swap_sa(s, 1);
+	}
+	else if ((*s)->value > (*s)->next->value && \
+		(*s)->next->value < (*s)->next->next->value)
 		rotate_ra(s, 1);
 }
 
@@ -41,7 +44,7 @@ void	little_sort(t_stack **a, t_stack **b)
 	push_pb(a, b, 1);
 	if (!ft_is_sorted_stack(*a))
 		small_sort(a);
-	if (ft_stack_size(*b) && !ft_is_sorted_stack(*b))
+	if (ft_stack_size(*b) == 2 && !ft_is_sorted_stack(*b))
 		swap_sb(b, 1);
 	while ((*b) != NULL)
 	{

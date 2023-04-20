@@ -6,17 +6,17 @@
 #    By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 19:13:37 by ikhristi          #+#    #+#              #
-#    Updated: 2023/04/17 19:00:29 by ikhristi         ###   ########.fr        #
+#    Updated: 2023/04/20 18:40:42 by ikhristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 DEBUG = -fsanitize=address
 LEAKS = leaks -atExit -- ./push-swap
 
-BONUS = bonus
+BONUS = checker
 BONUS_MAIN = src/checker/checker.c
 
 MAIN = src/main.c

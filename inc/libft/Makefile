@@ -55,7 +55,7 @@ RM		=	rm -f
 # -f (force) делает fclean исполняемым в любое время (даже без файлов .o)
 CC		=	gcc
 # Компилятор
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 
 all:		${NAME}
 # Используемые флаги

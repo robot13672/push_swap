@@ -6,11 +6,13 @@
 /*   By: ikhristi <ikhristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:06:40 by ikhristi          #+#    #+#             */
-/*   Updated: 2023/04/14 18:43:46 by ikhristi         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:49:43 by ikhristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 int	main(int argc, char **argv)
 {
